@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>web1 - welcome</title>
+<link rel = "stylesheet" href = "style.css">
+<script>
+	var Links = {
+			setColor : function(color){
+				var a_list = document.querySelectorAll('a');
+				var i = 0;
+				while(i < a_list.length){
+				    a_list[i].style.color = color;
+				    i += 1;
+				}
+			}
+	}
+	
+	var Body = {
+		setColor : function(color){
+			document.querySelector('body').style.color = color;
+		},
+		setBackgroundColor : function(color){
+			document.querySelector('body').style.backgroundColor = color;
+		}
+	}
+
+	function night_day_handler(self){
+		var target = document.querySelector('body');
+		if(self.value === 'night'){
+			Body.setBackgroundColor('black');
+			Body.setColor('white');
+			self.value = 'day';
+			
+			Links.setColor('powderblue');
+		}else{
+			Body.setBackgroundColor('white');
+			Body.setColor('black');
+			self.value = 'night';
+			
+			Links.setColor('blue');
+			
+		}
+	}
+</script>
+</head>
+<body>
+	<h1>
+		<a href="index.html">index</a>
+	</h1>
+	<div id = "grid">
+		<div id = "nav">
+		<!-- night day handler -->
+			<!-- <input type = "button" value = "night" onclick = "
+			document.querySelector('body').style.backgroundColor = 'black';
+			document.querySelector('body').style.color = 'white';
+			">
+			<input type = "button" value = "day" onclick = "
+			document.querySelector('body').style.backgroundColor = 'white';
+			document.querySelector('body').style.color = 'black';
+			"> -->
+			<!-- <input type = "button" value = "night" onclick = "
+				var target = document.querySelector('body');
+				if(this.value === 'night'){
+					target.style.backgroundColor = 'black';
+					target.style.color = 'white';
+					this.value = 'day';
+					
+					var a_list = document.querySelectorAll('a');
+					var i = 0;
+					while(i < a_list.length){
+					    a_list[i].style.color = 'powderblue';
+					    i += 1;
+					}
+					
+				}else{
+					target.style.backgroundColor = 'white';
+					target.style.color = 'black';
+					this.value = 'night';
+					
+					var a_list = document.querySelectorAll('a');
+					var i = 0;
+					while(i < a_list.length){
+					    a_list[i].style.color = 'blue';
+					    i += 1;
+					}
+				}
+			"> -->
+			<input type = "button" value = "night" onclick = "
+				night_day_handler(this);
+			">
+		<ol>
+			<li><a href="1.html">HTML</a></li>
+			<li><a href="2.html">CSS</a></li>
+			<li><a href="3.html">JavaScript</a></li>
+		</ol>
+		</div>
+		<div id = "article">
+			<h2>WEB이란 무엇인가?</h2>
+			<p>A website (also written as web site) is a collection of web
+				pages and related content that is identified by a common domain name
+				and published on at least one web server. Notable examples are
+				wikipedia.org, google.com, and amazon.com.</p>
+			<img src="index.png" width=50%>
+			<p>All publicly accessible websites collectively constitute the
+				World Wide Web. There are also private websites that can only be
+				accessed on a private network, such as a company's internal website
+				for its employees.</p>
+			<p>
+				<strong>웹 이외에 공부에 관한 작은 팁을 보고 싶으시면 <a
+					href="tip_for_study.html"><u>여기</u></a>를 눌러 주세요.
+				</strong>
+			</p>
+		</div>
+	</div>
+	<div id="disqus_thread"></div>
+	<script>
+		/**
+		 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+		 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+		/*
+		 var disqus_config = function () {
+		 this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+		 this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+		 };
+		 */
+		(function() { // DON'T EDIT BELOW THIS LINE
+			var d = document, s = d.createElement('script');
+			s.src = 'https://web-teemo.disqus.com/embed.js';
+			s.setAttribute('data-timestamp', +new Date());
+			(d.head || d.body).appendChild(s);
+		})();
+	</script>
+	<noscript>
+		Please enable JavaScript to view the <a
+			href="https://disqus.com/?ref_noscript">comments powered by
+			Disqus.</a>
+	</noscript>
+	<!--Start of Tawk.to Script-->
+	<script type="text/javascript">
+		var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+		(function() {
+			var s1 = document.createElement("script"), s0 = document
+					.getElementsByTagName("script")[0];
+			s1.async = true;
+			s1.src = 'https://embed.tawk.to/5f0884375b59f94722ba7dba/default';
+			s1.charset = 'UTF-8';
+			s1.setAttribute('crossorigin', '*');
+			s0.parentNode.insertBefore(s1, s0);
+		})();
+	</script>
+	<!--End of Tawk.to Script-->
+</body>
+</html>
